@@ -6,10 +6,10 @@ module.exports =
 {
   watch: true,
 
-  entry: './source/js/index.js',
+  entry: './source/app/index.js',
 
   output: {
-    path: path.join(__dirname, 'build/assets/js'),
+    path: path.join(__dirname, 'build/app'),
     filename: 'index.js'
   },
 
@@ -26,7 +26,7 @@ module.exports =
   module: {
     loaders: [{
       test: /\.js$/,
-      include: path.join(__dirname, 'source/js'),
+      include: path.join(__dirname, 'source/app'),
       loader: 'babel-loader',
       query: {
         presets: ['es2015', 'stage-1'],
@@ -41,7 +41,7 @@ module.exports =
     },
     modules: [
       'node_modules',
-      path.join(__dirname, 'source', 'js'),
+      path.join(__dirname, 'source', 'app'),
     ],
     extensions: ['.js'],
   },

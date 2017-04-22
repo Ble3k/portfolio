@@ -1,0 +1,70 @@
+$white: #fff;
+$beige: #efebe0;
+$light-green: #00bfa5;
+$light-green-hover: #009688;
+
+@mixin flex
+(
+  $align: flex-start,
+  $justify: flex-start,
+  $direction: row,
+  $wrap: wrap
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin button
+(
+  $width,
+  $height,
+  $backgroundColor,
+  $border,
+  $borderRadius,
+  $color: $white,
+  $fontSize: 14px,
+  $cursor: pointer,
+  $shrink: 0,
+  $grow: 0
+) {
+  width: $width;
+  height: $height;
+  background-color: $backgroundColor;
+  font-size: $fontSize;
+  border: $border;
+  border-radius: $borderRadius;
+  color: $color;
+  cursor: $cursor;
+  flex-shrink: $shrink;
+  flex-grow: $grow;
+  outline: none;
+}
+
+@mixin text
+(
+  $line-height,
+  $color: $white,
+  $size: 14px,
+  $weight: 500,
+  $textAlign: center
+) {
+  line-height: $line-height;
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+  text-align: $textAlign;
+}
+
+@mixin svg
+(
+  $fill,
+  $width: 100%,
+  $height: 100%
+) {
+  fill: $fill;
+  width: $width;
+  height: $height;
+}

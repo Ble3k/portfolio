@@ -1,7 +1,7 @@
 {
-  "name": "rfateev-builder",
+  "name": "rfateev-portfolio",
   "version": "1.0.0",
-  "author": "r.fateev",
+  "author": "R.Fateev",
   "license": "ISC",
   "scripts": {},
   "devDependencies": {
@@ -37,7 +37,6 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "jquery": "^3.1.1",
-    "normalize.css": "~5.0.0"
+    "jquery": "^3.1.1"
   }
 }
