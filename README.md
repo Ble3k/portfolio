@@ -1,13 +1,14 @@
-# Учебная сборка RFateev с webpack
+# My personal website-portfolio
+# Theme - mountains
 
-> Сборка работает на gulp версии 4.0 + webpack 2.2.1.
+> Developed while studying in LoftSchool
 
-#### Для начала работы
+#### To start working
 
 1. ```clone this repo```
 2. ```cd path/to/...```
 3. ```npm install gulpjs/gulp-cli -g```  
-> Установка последней версии Gulp CLI tools глобально (подробнее - [GitHub](https://github.com/gulpjs/gulp/blob/4.0/docs/getting-started.md) )
+> Last version of Gulp CLI tools global (more - [GitHub](https://github.com/gulpjs/gulp/blob/4.0/docs/getting-started.md) )
 
 4. ```npm install```
 6. ```run gulp``` 
