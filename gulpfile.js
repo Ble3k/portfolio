@@ -6,7 +6,6 @@ global.$ = {
   merge: require('merge-stream'),
   path: {
     tasks: require('./gulp/paths/tasks.js'),
-    cssFoundation: require('./gulp/paths/css.foundation.js')
   },
   gulp: require('gulp'),
   del: require('del'),
@@ -29,9 +28,6 @@ $.gulp.task('default', $.gulp.series(
     'sass',
     'pug',
     'copy:image',
-    'css:foundation',
-    'sprite:svg',
-    'sprite:img',
     'fonts'
   ),
   $.gulp.parallel(

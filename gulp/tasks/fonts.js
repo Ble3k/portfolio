@@ -2,8 +2,8 @@
 
 module.exports = function () {
   $.gulp.task('fonts', function () {
-    return $.gulp.src('./source/fonts/*', { since: $.gulp.lastRun('fonts') })
+    return $.gulp.src('./static/fonts/*', { since: $.gulp.lastRun('fonts') })
       .pipe($.gp.fontmin())
-      .pipe($.gulp.dest($.config.root + '/assets/fonts'));
+      .pipe($.gulp.dest($.config.root + '/static/fonts'));
   });
 };
