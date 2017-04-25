@@ -2,3 +2,7 @@ extends ../components/templates/Head
 
 block title
   title Blog - R.Fateev
+
+block content
+  +Header(ICON_TYPES.blogHeader, 'blog', 'Блог', 'Статьи, которые я написал')
+  include ../components/Footer/index

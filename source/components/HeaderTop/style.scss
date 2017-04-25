@@ -1,0 +1,42 @@
+.header-top {
+  @include flex(center, space-between);
+  padding: 15px 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header-top-icons {
+  @include flex();
+}
+
+.header-top-icons__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.header-top-icons__item__link {
+  @include flex(center, center);
+  width: 26px;
+  height: 26px;
+  opacity: 0.5;
+}
+
+.header-top-icons__item__link svg {
+  @include svg($white);
+}
+
+.header-top-icons__item__link:hover {
+  opacity: 1;
+}
+
+.header-top__menu-btn {
+  @include flex(center, center);
+  width: 40px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.header-top__menu-btn svg {
+  @include svg($white);
+}

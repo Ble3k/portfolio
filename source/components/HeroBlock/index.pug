@@ -1,0 +1,13 @@
+div.hero
+  div.hero__info
+    div.hero__avatar
+    h1.hero__name Руслан Фатеев
+    h3.hero__description Личный сайт веб разработчика
+    div.hero__icons
+      each item in IconsArray
+        a.hero__icon-link(href=item.link target="_blank")
+          +svg(item.icon)
+  div.hero__links
+    each item in LinksArray
+      if item.label !== LINKS_TYPES.auth.label
+        a.hero__link(href=item.link)= item.name

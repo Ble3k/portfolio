@@ -1,7 +1,10 @@
 $white: #fff;
+$footer-black: #373e42;
+$text-dark: #455a64;
 $beige: #efebe0;
 $light-green: #00bfa5;
 $light-green-hover: #009688;
+$light-gray: #f9f9f9;
 
 @mixin flex
 (
@@ -22,8 +25,8 @@ $light-green-hover: #009688;
   $width,
   $height,
   $backgroundColor,
-  $border,
-  $borderRadius,
+  $border: none,
+  $borderRadius: 0,
   $color: $white,
   $fontSize: 14px,
   $cursor: pointer,
@@ -41,6 +44,7 @@ $light-green-hover: #009688;
   flex-shrink: $shrink;
   flex-grow: $grow;
   outline: none;
+  transition: all 0.5s;
 }
 
 @mixin text
@@ -67,4 +71,5 @@ $light-green-hover: #009688;
   fill: $fill;
   width: $width;
   height: $height;
+  transition: all 0.5s;
 }

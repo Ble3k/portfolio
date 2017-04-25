@@ -1,1 +1,33 @@
 @import "global_styles/index";
+@import "components/HeroBlock/style";
+
+.main {
+  background: url('/static/images/main-backGround.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.main__content {
+  @include flex(center, flex-start, column, nowrap);
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.main__auth {
+  @include button(auto, auto, transparent, 1px solid $white, 5px);
+  padding: 15px 28px;
+  position: absolute;
+  top: 30px;
+  right: 100px;
+}
+
+.main__auth:hover {
+  @include button(auto, auto, $white, none, 5px, $light-green);
+}
+
+.main__made-by {
+  @include text(6.19, rgba($white, 0.7), 14px, 300);
+  margin-top: auto;
+}

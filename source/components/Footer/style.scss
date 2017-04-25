@@ -1,0 +1,71 @@
+.footer {
+  @include flex(flex-start, flex-start, column, nowrap);
+  background-color: rgba($footer-black, 0.85);
+}
+
+.footer__top,
+.footer__bottom {
+  @include flex(center, space-between);
+  padding: 15px 30px;
+  width: 100%;
+}
+
+.footer__top {
+ border-bottom: 1px solid rgba($white, 0.1);
+}
+
+.footer-menu,
+.footer-icons {
+  @include flex();
+}
+
+.footer-menu__item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.footer-icons__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-menu__item__link {
+  @include text(1);
+}
+
+.footer-menu__item__link:hover {
+  color: $light-green;
+}
+
+.footer-icons__item__link {
+  @include flex(center, center);
+  width: 36px;
+  height: 36px;
+  opacity: 0.5;
+  border: solid 1px $light-gray;
+  border-radius: 50%;
+}
+
+.footer-icons__item__link svg {
+  @include svg($light-gray, 60%, 60%);
+  transition: none;
+}
+
+.footer-icons__item__link:hover {
+  border: 0;
+  background: $white;
+  opacity: 1;
+}
+
+.footer-icons__item__link:hover svg{
+  @include svg(rgba($footer-black, 0.85), 60%, 60%);
+  transition: none;
+}
+
+.footer__description,
+.footer__made-by {
+  max-width: 500px;
+  @include text(1.5, rgba($white, 0.5), 14px, 300, left);
+}
+
+.footer__made-by {
+  text-align: right;
+}

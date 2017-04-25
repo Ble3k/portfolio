@@ -1,0 +1,14 @@
+footer.footer
+  div.footer__top
+    ul.footer-menu
+      each item in LinksArray
+        li.footer-menu__item
+          a.footer-menu__item__link(href= item.link)= item.name
+    ul.footer-icons
+      each item in IconsArray
+        li.footer-icons__item
+          a.footer-icons__item__link(href= item.link target="_blank")
+            +svg(item.icon)
+  div.footer__bottom
+    p.footer__description Я веб-разработчик из Москвы, и этот сайт я сделал во время обучения в Школе онлайн образования LoftSchool.
+    p.footer__made-by © Руслан Фатеев | LoftSchool | 2017

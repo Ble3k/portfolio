@@ -1,0 +1,86 @@
+$heroBlockBorderRadius: 5px;
+
+.hero {
+  @include flex(flex-start, flex-start, column, nowrap);
+  margin-top: auto;
+}
+
+.hero__info {
+  @include flex(center, flex-start, column, nowrap);
+  width: 100%;
+  padding: 40px;
+  background-color: rgba($white, 0.85);
+  border-top-left-radius: $heroBlockBorderRadius;
+  border-top-right-radius: $heroBlockBorderRadius;
+}
+
+.hero__avatar {
+  background: url('/static/images/hero-avatar.jpg') no-repeat 50% 20%;
+  background-size: cover;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transform: rotate(10deg);
+}
+
+.hero__name {
+  @include text(1.21, $text-dark, 28px);
+  margin-bottom: 5px;
+}
+
+.hero__description {
+  @include text(1.21, rgba(69, 90, 100, 0.8), 16px);
+}
+
+.hero__icons {
+  @include flex();
+  margin-top: 30px;
+}
+
+.hero__icon-link {
+  @include flex(center, center);
+  width: 25px;
+  height: 25px;
+  margin-right: 25px;
+}
+
+.hero__icon-link:last-child {
+  margin-right: 0;
+}
+
+.hero__icon-link svg {
+  @include svg($light-green);
+}
+
+.hero__icon-link:hover svg {
+  @include svg($light-green-hover);
+}
+
+.hero__links {
+  @include flex();
+  border-bottom-left-radius: $heroBlockBorderRadius;
+  border-bottom-right-radius: $heroBlockBorderRadius;
+}
+
+.hero__link {
+  @include button(auto, auto, rgba($light-green, 0.70));
+  padding: 14px 32px;
+}
+
+.hero__link:first-child {
+  border-bottom-left-radius: $heroBlockBorderRadius;
+}
+
+.hero__link:last-child {
+  border-bottom-right-radius: $heroBlockBorderRadius;
+}
+
+.hero__link:hover {
+  @include button(auto, auto, rgba($light-green-hover, 0.70));
+}
+
+.hero__link:not(:last-child) {
+  border-right: 2px solid rgba($white, 0.4);
+}
+
