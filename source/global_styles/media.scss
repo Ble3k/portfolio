@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1780px) {
   .about__left {
-    @include flex(center, center, column, nowrap);
+    @include flex(center, flex-start, column, nowrap);
   }
 
   .about__left__content {
