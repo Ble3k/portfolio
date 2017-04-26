@@ -1,6 +1,166 @@
 @import "../global_styles/index";
 @import "../components/HeaderTop/style";
 @import "../components/mixins/Header/style";
+@import "../components/mixins/BernierTitle/style";
+
+.about {
+  @include flex(stretch, center, row);
+  width: 100%;
+}
+
+.about__left {
+  @include flex(flex-start, flex-end, row);
+  width: 50%;
+  padding: 0 20px 120px 40px;
+  background-color: $light-beige;
+  position: relative;
+}
+
+.about__left__svg-container,
+.about__right__svg-container {
+  @include flex();
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.about__left__svg-container > svg {
+  @include svg($light-beige);
+}
+
+.about__right {
+  @include flex(flex-start, flex-start, column);
+  width: 50%;
+  padding: 0 40px 30px;
+  background-color: $beige;
+  position: relative;
+}
+
+.about__right__svg-container > svg {
+  @include svg($beige);
+}
+
+.about__left__content {
+  @include flex(flex-start, flex-start, column, nowrap);
+  width: 100%;
+  max-width: 440px;
+  margin-left: 10%;
+}
+
+.about__left__avatar {
+  @include flex();
+  width: 100%;
+  height: 390px;
+  background: url('/static/images/hero_avatar_new.jpg') no-repeat 50% 20%;
+  background-size: cover;
+  margin: 20px 0 40px 0;
+}
+
+.about__left__title {
+  @include flex(center, center);
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.about__left__p-text {
+  @include text(1.5, $bernier-darkBlue, 16px, 500, left);
+  margin-bottom: 20px;
+}
+
+.about__right__main-title {
+  @include flex(center, center);
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.about__right__main-title > div {
+  max-width: 380px;
+  text-align: center;
+}
+
+.about__right__p-text {
+  @extend .about__left__p-text;
+  margin-bottom: 50px;
+}
+
+.skills,
+.skills__container {
+  @include flex(flex-start, flex-start, column, nowrap);
+}
+
+.skills__container {
+  margin-bottom: 40px;
+}
+
+.skills__name {
+  @include text(1.14, $bernier-darkBlue, 28px);
+  margin-bottom: 20px;
+}
+
+.skills__diagrams {
+  @include flex();
+}
+
+.skills__diagram-container {
+  @include flex(center, center);
+  width: 120px;
+  height: 120px;
+  margin: 0 40px 20px 0;
+}
+
+.map {
+  @include flex(center, center);
+  width: 100%;
+  height: 80vh;
+  position: relative;
+}
+
+#mapkit {
+  width: 100%;
+  height: 100%;
+}
+
+.map__contacts {
+  @include flex(center, flex-start, column, nowrap);
+  width: 380px;
+  height: 290px;
+  background-color: rgba(#fcfcfc, 0.85);
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: 35px;
+  z-index: 99;
+}
+
+.map__contacts__container {
+  @include flex(flex-start, flex-start, column, nowrap);
+  margin-top: 40px;
+}
+
+.contact {
+  @include flex(center);
+}
+
+.contact:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.contact > svg {
+  @include svg($light-green, 24px, 24px);
+  margin-right: 10px;
+}
+
+.contact__label {
+  @include text(1, $bernier-darkBlue, 16px);
+}
 
 
+@import "../components/mixins/CircleDiagram/style";
 @import "../components/Footer/style";
+@import "../global_styles/media";

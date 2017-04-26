@@ -7,7 +7,14 @@
     burger: 'burger',
     portfolioHeader: 'portfolioHeader',
     blogHeader: 'blogHeader',
-    arrowDown: 'arrowDown'
+    arrowDown: 'arrowDown',
+    aboutBgLeft: 'aboutBgLeft',
+    aboutBgRight: 'aboutBgRight',
+    aboutHeader: 'aboutHeader',
+    skype: 'skype',
+    mail: 'mail',
+    phone: 'phone',
+    address: 'address'
   }
 
   var LINKS_TYPES = {
@@ -45,3 +52,101 @@
   ]
 
   var LinksArray = [ LINKS_TYPES.projects, LINKS_TYPES.about, LINKS_TYPES.blog, LINKS_TYPES.auth ]
+
+  var SkillsArray = [
+    {
+      group: 'Frontend',
+      skills: [
+        {
+          name: 'HTML5',
+          value: 75
+        },
+        {
+          name: 'CSS3',
+          value: 85
+        },
+        {
+          name: 'JavaScript',
+          value: 50
+        },
+        {
+          name: 'jQuery',
+          value: 78
+        },
+        {
+          name: 'React.js',
+          value: 90
+        },
+        {
+          name: 'Redux',
+          value: 60
+        }
+      ]
+    },
+    {
+      group: 'Workflow',
+      skills: [
+        {
+          name: 'Git',
+          value: 40
+        },
+        {
+          name: 'Gulp',
+          value: 90
+        },
+        {
+          name: 'Webpack',
+          value: 50
+        },
+        {
+          name: 'Bower/Npm',
+          value: 90
+        },
+        {
+          name: 'Jira',
+          value: 70
+        }
+      ]
+    },
+    {
+      group: 'Page layout',
+      skills: [
+        {
+          name: 'Adaptive',
+          value: 80
+        },
+        {
+          name: 'Responsive',
+          value: 90
+        },
+        {
+          name: 'Cross-Browser',
+          value: 70
+        },
+        {
+          name: 'Flexbox',
+          value: 100
+        }
+      ]
+    }
+  ]
+
+  var ContactsArray = [
+    {
+      icon: ICON_TYPES.skype,
+      label: 'kartmantm'
+    },
+    {
+      icon: ICON_TYPES.mail,
+      label: 'rufateev@gmail.com'
+    },
+    {
+      icon: ICON_TYPES.phone,
+      label: '+7 968 923 60 89'
+    },
+    {
+      icon: ICON_TYPES.address,
+      label: 'г. Москва, ул. 3-я институтская, д. 17'
+    }
+  ]
+

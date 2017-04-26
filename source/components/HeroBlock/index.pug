@@ -6,7 +6,7 @@ div.hero
     div.hero__icons
       each item in IconsArray
         a.hero__icon-link(href=item.link target="_blank")
-          +svg(item.icon)
+          +Svg(item.icon)
   div.hero__links
     each item in LinksArray
       if item.label !== LINKS_TYPES.auth.label

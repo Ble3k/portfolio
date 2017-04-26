@@ -1,0 +1,17 @@
+@media only screen and (max-width: 1780px) {
+  .about__left {
+    @include flex(center, center, column, nowrap);
+  }
+
+  .about__left__content {
+    margin-left: 0;
+  }
+
+  .about__left__main-title {
+    margin: 40px 0;
+  }
+
+  .about__right__main-title {
+    margin-top: 40px;
+  }
+}

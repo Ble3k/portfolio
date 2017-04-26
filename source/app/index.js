@@ -1,5 +1,1 @@
-import $ from 'jquery'
-
-$(document).ready(() => {
-  console.log('it is OK!')
-})
+import * as googleMap from 'googleMap'

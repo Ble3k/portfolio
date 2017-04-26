@@ -31,3 +31,5 @@
   @include text(6.19, rgba($white, 0.7), 14px, 300);
   margin-top: auto;
 }
+
+@import "global_styles/media";

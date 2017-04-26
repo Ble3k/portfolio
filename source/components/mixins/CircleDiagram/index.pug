@@ -1,0 +1,12 @@
+mixin CircleDiagram(value, text)
+  div.circleDiagram
+    svg.circles(viewBox='0 0 110 110')
+      circle.circles__first(r="45" cx="50%" cy="50%" fill="none")
+      circle.circles__second(
+        r="45"
+        cx="50%"
+        cy="50%"
+        transform="rotate(-90 55 55)"
+        style='stroke-dasharray: ' + (282.6/100)*value + ' 282.6'
+      )
+    span.circleDiagram__text= text

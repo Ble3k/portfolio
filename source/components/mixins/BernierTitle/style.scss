@@ -1,0 +1,66 @@
+.bernier {
+  @include flex(center, center);
+  position: relative;
+}
+
+.bernier__title {
+  @include flex(center, center, row, nowrap);
+  font-family: 'BERNIERRegular-Regular', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.bernier__title_size_big {
+  font-size: $bernier-big;
+}
+
+.bernier__title_size_small {
+  font-size: $bernier-small;
+}
+
+.bernier__title_color_white {
+  color: $white;
+}
+
+.bernier__title_color_dark {
+  color: $bernier-dark;
+}
+
+.bernier__title_color_darkBlue {
+  color: $bernier-darkBlue;
+}
+
+.bernier__title_hasPseudo:after {
+  content: '';
+  @include flex();
+  width: 22px;
+  height: 5px;
+  background-color: rgba($bernier-dark, 0.2);
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.bernier__title_hasPseudo:before {
+  @extend .bernier__title_hasPseudo:after;
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.bernier__title_hasPseudo.bernier__title_color_white:after,
+.bernier__title_hasPseudo.bernier__title_color_white:before {
+  background-color: rgba($white, 0.2);
+}
+
+.bernier > svg {
+  @include svg(rgba($bernier-dark-svg, 0.7), auto, auto);
+  position: absolute;
+  z-index: 0;
+  top: -40px;
+  left: -10px;
+}
+
+.bernier + .bernier__title_color_white + svg {
+  @include svg(rgba($white, 0.06), auto, auto)
+}

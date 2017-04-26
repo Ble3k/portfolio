@@ -1,0 +1,34 @@
+.circleDiagram {
+  @include flex(center, center);
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.circles {
+  fill: none;
+  stroke-width: 15;
+  width: 100%;
+  height: 100%;
+}
+
+.circles__first {
+  stroke: $circle-gray;
+}
+
+.circles__second {
+  stroke: $circle-green;
+  stroke-linecap: round;
+}
+
+.circleDiagram__text {
+  @include flex(center, center);
+  @include text(1.14, $light-green, 14px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 60%;
+}

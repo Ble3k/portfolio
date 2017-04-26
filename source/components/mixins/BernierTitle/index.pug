@@ -1,0 +1,9 @@
+mixin BernierTitle(size, text, hasPseudo, color, svg)
+  div.bernier
+    h2(
+      class='bernier__title' +
+      ' bernier__title_size_' + size +
+      ' bernier__title_color_' + color +
+      ' bernier__title_' + hasPseudo)= text
+    if svg
+      +Svg(svg)

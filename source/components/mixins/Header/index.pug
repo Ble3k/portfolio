@@ -3,11 +3,14 @@ mixin Header(icon, blog, name, description)
     div.header__shadow-container
       include ../../HeaderTop/index
       div(class='header__content ' + blog)
-        +svg(icon)
+        +Svg(icon)
         div.header__hero
           div.header__hero__avatar
-          h1(class='header__hero__name ' + blog)= name
+          if blog
+            +BernierTitle('big', name, 'hasPseudo', 'white')
+          else
+            h1(class='header__hero__name ' + blog)= name
           h3(class='header__hero__description ' + blog)= description
           if !blog
             div.arrow-down
-              +svg(ICON_TYPES.arrowDown)
+              +Svg(ICON_TYPES.arrowDown)
