@@ -3,7 +3,7 @@ footer.footer
     ul.footer-menu
       each item in LinksArray
         li.footer-menu__item
-          a.footer-menu__item__link(href= item.link)= item.name
+          a(class="footer-menu__item-link " + item.label href= item.link)= item.name
     ul.footer-icons
       each item in IconsArray
         li.footer-icons__item

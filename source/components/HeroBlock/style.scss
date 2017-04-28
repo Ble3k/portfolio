@@ -61,11 +61,18 @@ $heroBlockBorderRadius: 5px;
   @include flex();
   border-bottom-left-radius: $heroBlockBorderRadius;
   border-bottom-right-radius: $heroBlockBorderRadius;
+  width: 100%;
 }
 
 .hero__link {
-  @include button(auto, auto, rgba($light-green, 0.70));
+  @include button(50%, 50%, rgba($light-green, 0.7));
+  @include flex(center, center);
   padding: 14px 32px;
+  flex-grow: 1;
+}
+
+.hero__link:hover {
+  @include button(50%, 50%, rgba($light-green-hover, 0.7));
 }
 
 .hero__link:first-child {
@@ -74,10 +81,6 @@ $heroBlockBorderRadius: 5px;
 
 .hero__link:last-child {
   border-bottom-right-radius: $heroBlockBorderRadius;
-}
-
-.hero__link:hover {
-  @include button(auto, auto, rgba($light-green-hover, 0.70));
 }
 
 .hero__link:not(:last-child) {

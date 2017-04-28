@@ -28,6 +28,7 @@ $.gulp.task('default', $.gulp.series(
     'sass',
     'pug',
     'copy:image',
+    'backend',
     'fonts'
   ),
   $.gulp.parallel(

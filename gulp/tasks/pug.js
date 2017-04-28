@@ -1,6 +1,6 @@
 'use strict';
 
-var pugFiles = ['source/index.pug', 'source/about/index.pug', 'source/projects/index.pug', 'source/blog/index.pug'];
+var pugFiles = ['source/index.pug', 'source/about/index.pug', 'source/projects/index.pug'];
 
 module.exports = function() {
   $.gulp.task('pug', function(cb) {

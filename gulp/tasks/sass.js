@@ -1,6 +1,6 @@
 'use strict';
 
-var sccFiles = ['source/style.scss', 'source/about/style.scss', 'source/projects/style.scss', 'source/blog/style.scss'];
+var sccFiles = ['source/style.scss', 'source/about/style.scss', 'source/projects/style.scss'];
 
 module.exports = function() {
   $.gulp.task('sass', function(cb) {

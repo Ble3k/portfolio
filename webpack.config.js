@@ -6,11 +6,15 @@ module.exports =
 {
   watch: true,
 
-  entry: './source/app/index.js',
+  entry: {
+    index: './source/app/index.js',
+    googleMap: './source/app/googleMap/index.js',
+    works: './source/app/works/index.js'
+  },
 
   output: {
     path: path.join(__dirname, 'build/app'),
-    filename: 'index.js'
+    filename: '[name].js'
   },
 
   plugins: [

@@ -3,6 +3,225 @@
 @import "../components/mixins/Header/style";
 @import "../components/mixins/BernierTitle/style";
 
+.images-props {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
+.works {
+  @include flex(flex-start, flex-start, column, nowrap);
+}
+
+.works__title-container {
+  @include flex(flex-start, center);
+  width: 100%;
+  height: 160px;
+  background-color: $dark-beige;
+  position: relative;
+}
+
+.works__left-triangle,
+.works__right-triangle {
+  @include flex();
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.works__left-triangle > svg,
+.works__right-triangle > svg {
+  @include svg($dark-beige);
+}
+
+.works__title {
+  margin-top: 30px;
+}
+
+.works__title svg {
+  top: -70px
+}
+
+.slider {
+  @include flex(stretch);
+  width: 100%;
+}
+
+.slider__left {
+  @include flex(center, center, column, nowrap);
+  flex: 1 1 50%;
+  background-color: $super-dark-beige;
+}
+
+.slider__title {
+  @include flex(center, center);
+  margin-bottom: 20px;
+  max-width: 360px;
+}
+
+.slider__title h2 {
+  text-align: center;
+}
+
+.slider__skills {
+  @include flex(center, center);
+  @include text(1, $light-green, 16px);
+  text-transform: uppercase;
+  height: 50px;
+  width: 420px;
+  border-bottom: 1px rgba($light-green, 0.3) solid;
+  border-top: 1px rgba($light-green, 0.3) solid;
+  margin: 20px 0 40px;
+}
+
+.slider__designed-by {
+  @include text(1, 14px, $bernier-darkBlue);
+}
+
+.slider__link {
+  @include flex(center, center);
+  padding: 18px;
+  border-radius: 5px;
+  background-color: $light-green;
+}
+
+.slider__link:hover {
+  background-color: $light-green-hover;
+  transition: all 0.5s;
+}
+
+.slider__link > svg {
+  @include svg($white, 20px, 20px);
+  margin-right: 10px;
+}
+
+.slider__link-text {
+  @include text(1, $white, 16px)
+}
+
+.slider__right {
+  @include flex(center, center, column, nowrap);
+  flex: 1 1 50%;
+  background-color: $white;
+}
+
+.slider__main {
+  @include flex(flex-start, center);
+  width: 100%;
+}
+
+.slider__main-image {
+  width: 100%;
+  height: 400px;
+  @extend .images-props;
+}
+
+.slider__sides {
+  @include flex();
+  height: 225px;
+  width: 100%;
+}
+
+.slider__sides-left {
+  @extend .images-props;
+  flex: 1 1 50%;
+  height: 100%;
+  border-right: 1px solid rgba(182, 180, 174, 0.8);
+}
+
+.slider__sides-right {
+  @extend .images-props;
+  flex: 1 1 50%;
+  height: 100%;
+}
+
+.slider__sides-left svg {
+  transform: rotate(90deg);
+}
+
+.slider__sides-right svg {
+  transform: rotate(-90deg);
+}
+
+.slider__sides-shadow {
+  @include flex(center, center);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(182, 180, 174, 0.7);
+  cursor: pointer;
+}
+
+.slider__sides-shadow:hover {
+  background-color: rgba(182, 180, 174, 0.8);
+}
+
+.slider__sides-shadow > svg {
+  @include svg($white, 30px, 30px)
+}
+
+.reviews {
+  @include flex(center, center, column, nowrap);
+  background: url('/static/images/works-about.jpg') no-repeat center 0;
+  background-size: cover;
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.reviews__title {
+  @include flex(center, center);
+  max-width: 430px;
+}
+
+.reviews__title h2 {
+  text-align: center;
+}
+
+.reviews__container {
+  @include flex();
+  margin-top: 70px;
+}
+
+.review {
+  @include flex(flex-start, flex-start, column, nowrap);
+  max-width: 360px;
+  margin: 0 15px;
+}
+
+.review > svg {
+  @include svg(rgba(55, 62, 66, 0.2), 30px, 30px);
+  margin-bottom: 30px;
+}
+
+.review__text {
+  @include text(1.62, $bernier-darkBlue, 16px, 500, left);
+  margin-bottom: 25px;
+}
+
+.review__author-info {
+  @include flex(center);
+  margin-bottom: 70px;
+}
+
+.review__author-avatar {
+  margin-right: 20px;
+}
+
+.review__author-personal {
+  @include flex(flex-start, flex-start, column, nowrap);
+}
+
+.review__author-name {
+  @include text(1, $light-green, 16px, 600, left);
+  margin-bottom: 5px;
+}
+
+.review__author-position {
+  @include text(1, $light-green, 14px, 400, left);
+}
+
+
+@import "../components/Form/style";
 @import "../components/Footer/style";
 @import "../global_styles/media";

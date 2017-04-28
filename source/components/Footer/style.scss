@@ -27,11 +27,12 @@
   margin-right: 10px;
 }
 
-.footer-menu__item__link {
+.footer-menu__item-link {
   @include text(1);
 }
 
-.footer-menu__item__link:hover {
+.footer-menu__item-link:hover,
+.footer-menu__item-link_active {
   color: $light-green;
 }
 

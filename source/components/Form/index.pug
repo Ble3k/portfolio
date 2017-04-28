@@ -1,0 +1,28 @@
+div.form
+  div.form__message-to-show.hide
+    +BernierTitle('small', 'Спасибо! Ваше сообщение отправлено', '', 'darkBlue')
+  div.form__content
+    div.form__title
+      +BernierTitle('small', 'Связаться со мной', 'hasPseudo', 'darkBlue')
+    span.form__validate-text
+    div.form__inputs
+      each input in InputsArr
+        if input.textarea
+          textarea(
+            class='form__input form__' + input.className
+            type= input.type
+            name= input.name
+            required= input.required
+            placeholder= input.placeholder
+          )
+        else
+          input(
+            class='form__input form__' + input.className
+            type= input.type
+            name= input.name
+            required= input.required
+            placeholder= input.placeholder
+          )
+  div.form__buttons
+    button.form__submit Отправить
+    button.form__clear Очистить

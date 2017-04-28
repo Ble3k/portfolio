@@ -15,18 +15,6 @@
   position: relative;
 }
 
-.main__auth {
-  @include button(auto, auto, transparent, 1px solid $white, 5px);
-  padding: 15px 28px;
-  position: absolute;
-  top: 30px;
-  right: 100px;
-}
-
-.main__auth:hover {
-  @include button(auto, auto, $white, none, 5px, $light-green);
-}
-
 .main__made-by {
   @include text(6.19, rgba($white, 0.7), 14px, 300);
   margin-top: auto;

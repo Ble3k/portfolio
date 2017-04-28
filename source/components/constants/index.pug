@@ -14,7 +14,11 @@
     skype: 'skype',
     mail: 'mail',
     phone: 'phone',
-    address: 'address'
+    address: 'address',
+    worksHeader: 'worksHeader',
+    link: 'link',
+    worksAbout: 'worksAbout',
+    quote: 'quote'
   }
 
   var LINKS_TYPES = {
@@ -27,11 +31,6 @@
       name: 'Обо мне',
       label: 'about',
       link: '/about/index.html'
-    },
-    blog: {
-      name: 'Блог',
-      label: 'blog',
-      link: '/blog/index.html'
     },
     auth: {
       name: 'Авторизация',
@@ -51,7 +50,7 @@
     }
   ]
 
-  var LinksArray = [ LINKS_TYPES.projects, LINKS_TYPES.about, LINKS_TYPES.blog, LINKS_TYPES.auth ]
+  var LinksArray = [ LINKS_TYPES.projects, LINKS_TYPES.about, LINKS_TYPES.auth ]
 
   var SkillsArray = [
     {
@@ -147,6 +146,50 @@
     {
       icon: ICON_TYPES.address,
       label: 'г. Москва, ул. 3-я институтская, д. 17'
+    }
+  ]
+
+  var ReviewsArray = [
+    {
+      author: {
+        name: 'Ковальчук Дмитрий',
+        position: 'основатель Loftschool',
+        avatar: '/static/images/dmitriy.png'
+      },
+      review: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!'
+    },
+    {
+      author: {
+        name: 'Сабанцев Владимир',
+        position: 'преподаватель',
+        avatar: '/static/images/vladimir.png'
+      },
+      review: 'Отличный ученик, показал способность мыслить нестандартно, все ТЗ выполнено в срок! Этот код выдержит любые испытания, отличная работа!'
+    }
+  ]
+
+  var InputsArr = [
+    {
+      name: 'name',
+      className: 'name-input',
+      type: 'text',
+      required: true,
+      placeholder: 'Имя'
+    },
+    {
+      name: 'email',
+      className: 'mail-input',
+      type: 'text',
+      required: true,
+      placeholder: 'Email'
+    },
+    {
+      name: 'comment',
+      className: 'comment-input',
+      type: 'text',
+      required: true,
+      textarea: true,
+      placeholder: 'Ваше сообщение'
     }
   ]
 

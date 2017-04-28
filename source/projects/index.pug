@@ -3,6 +3,54 @@ extends ../components/templates/Head
 block title
   title Projects - R.Fateev
 
+block scripts
+  script(src="/app/works.js")
+
 block content
   +Header(ICON_TYPES.portfolioHeader, '', 'Руслан Фатеев', 'Личный сайт веб разработчика')
+
+  main
+    div.works
+      div.works__title-container
+        div.works__left-triangle
+          +Svg(ICON_TYPES.aboutBgLeft)
+        div.works__right-triangle
+          +Svg(ICON_TYPES.aboutBgRight)
+        div.works__title
+          +BernierTitle('big', 'Мои работы', 'hasPseudo', 'dark', ICON_TYPES.worksHeader)
+      div.slider
+        div.slider__left
+          div.slider__title
+            +BernierTitle('small', '', 'hasPseudo', 'darkBlue')
+          span.slider__designed-by Designed by Ilya Sidorenko
+          span.slider__skills html, css, javascript
+          a.slider__link(href="" target="_blank")
+            +Svg(ICON_TYPES.link)
+            span.slider__link-text Посмотреть сайт
+        div.slider__right
+          div.slider__main
+            div.slider__main-image
+          div.slider__sides
+            div.slider__sides-left
+              div.slider__sides-shadow
+                +Svg(ICON_TYPES.arrowDown)
+            div.slider__sides-right
+              div.slider__sides-shadow
+                +Svg(ICON_TYPES.arrowDown)
+      div.reviews
+        div.reviews__title
+          +BernierTitle('big', 'Что обо мне говорят', 'hasPseudo', 'dark', ICON_TYPES.worksAbout)
+        div.reviews__container
+          each item in ReviewsArray
+            div.review
+              +Svg(ICON_TYPES.quote)
+              p.review__text= item.review
+              div.review__author-info
+                img.review__author-avatar(src= item.author.avatar alt="author avatar")
+                div.review__author-personal
+                  span.review__author-name= item.author.name
+                  span.review__author-position= item.author.position
+        include ../components/Form/index
+
+
   include ../components/Footer/index
