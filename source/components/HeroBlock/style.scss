@@ -65,14 +65,14 @@ $heroBlockBorderRadius: 5px;
 }
 
 .hero__link {
-  @include button(50%, 50%, rgba($light-green, 0.7));
+  @include button(50%, auto, rgba($light-green, 0.7));
   @include flex(center, center);
   padding: 14px 32px;
   flex-grow: 1;
 }
 
 .hero__link:hover {
-  @include button(50%, 50%, rgba($light-green-hover, 0.7));
+  @include button(50%, auto, rgba($light-green-hover, 0.7));
 }
 
 .hero__link:first-child {

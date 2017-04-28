@@ -53,6 +53,7 @@ $border-radius: 5px;
   flex-shrink: 0;
   box-sizing: border-box;
   font-size: 14px;
+  box-shadow: none;
 }
 
 .form__comment-input {
@@ -78,15 +79,14 @@ $border-radius: 5px;
 }
 
 .form__buttons {
-  @include flex();
+  @include flex(stretch);
   width: 100%;
   margin-top: auto;
 }
 
 .form__submit,
 .form__clear {
-  @include button(50%, auto, $light-green);
-  padding: 20px;
+  @include button(50%, 70px, $light-green);
 }
 
 .form__submit:hover,
