@@ -16,6 +16,7 @@ html
     meta(content="ie=edge" http-equiv="x-ua-compatible")
     block scripts
     link(rel='stylesheet' href='./style.css')
+    link(rel="shortcut icon" href="/static/images/fav_mount.png" type="image/png")
     script(src='/app/index.js' defer)
 
     <!--[if lt IE 9]>
@@ -24,3 +25,16 @@ html
 
   body
     block content
+
+    div.main-menu
+      div.main-menu__svg-container
+        +Svg(ICON_TYPES.close)
+      div.main-menu__link-container
+        each item in LinksArray
+          a.main-menu__link(href= item.link)
+            +BernierTitle('big', item.name, 'hasPseudo', 'white')
+
+    div.preloader
+      div.preloader__spinner
+        div.preloader__animation
+        div.preloader__percents 0%

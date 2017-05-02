@@ -1,4 +1,5 @@
 div.form
+  div.form__blur-bg
   div.form__message-to-show.hide
     +BernierTitle('small', 'Спасибо! Ваше сообщение отправлено', '', 'darkBlue')
   div.form__content
@@ -9,19 +10,19 @@ div.form
       each input in InputsArr
         if input.textarea
           textarea(
-            class='form__input form__' + input.className
-            type= input.type
-            name= input.name
-            required= input.required
-            placeholder= input.placeholder
+          class='form__input form__' + input.className
+          type= input.type
+          name= input.name
+          required= input.required
+          placeholder= input.placeholder
           )
         else
           input(
-            class='form__input form__' + input.className
-            type= input.type
-            name= input.name
-            required= input.required
-            placeholder= input.placeholder
+          class='form__input form__' + input.className
+          type= input.type
+          name= input.name
+          required= input.required
+          placeholder= input.placeholder
           )
   div.form__buttons
     button.form__submit Отправить

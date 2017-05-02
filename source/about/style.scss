@@ -8,6 +8,17 @@
   width: 100%;
 }
 
+.about__triangles {
+  @include flex(stretch);
+  width: 100%;
+  position: relative;
+}
+
+.about__content {
+  @include flex(stretch);
+  width: 100%;
+}
+
 .about__left {
   @include flex(flex-start, flex-end, row);
   width: 50%;
@@ -22,8 +33,13 @@
   position: absolute;
   top: -100px;
   left: 0;
-  width: 100%;
+  width: 50%;
   height: 100px;
+}
+
+.about__right__svg-container {
+  left: auto;
+  right: 0;
 }
 
 .about__left__svg-container > svg {

@@ -1,6 +1,4 @@
-import $ from 'jquery'
 import * as menuActive from 'menuActive'
-
-$(document).ready(() => {
-  console.log('it is ok!')
-})
+import * as parallax from 'parallax'
+import * as preloader from 'preloader'
+import * as menu from 'menu'

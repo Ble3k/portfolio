@@ -78,4 +78,13 @@ $(document).ready(() => {
 
   slideOnChange(currStep, currStep + 1, lastStep)
 
+  const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+  const sliderLeft = $('.slider__left')
+  const sliderMain = $('.slider__main')
+
+  if (viewportWidth <= 960) {
+    sliderLeft.detach()
+    sliderLeft.insertAfter(sliderMain)
+  }
+
 })

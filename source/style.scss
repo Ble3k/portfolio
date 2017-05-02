@@ -2,10 +2,35 @@
 @import "components/HeroBlock/style";
 
 .main {
-  background: url('/static/images/main-backGround.jpg') no-repeat 50% 50%;
-  background-size: cover;
+  background-color: $paralax-bg;
   width: 100%;
   height: 100%;
+  position: relative;
+}
+
+.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.parallax__layer {
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  background-size: cover;
+  background-position-y: 50%;
+}
+
+@for $i from 1 through 10 {
+  .parallax__layer-#{$i} {
+    background-image: url('/static/images/layer_#{$i}.png');
+  }
 }
 
 .main__content {

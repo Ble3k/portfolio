@@ -5,6 +5,10 @@ block title
 
 block content
   main.main
+    div.parallax
+      while layer <= layers
+        div(class='parallax__layer parallax__layer-' + layer)
+        - layer++
     div.main__content
       include components/HeroBlock/index
       p.main__made-by © Руслан Фатеев | LoftSchool | 2017

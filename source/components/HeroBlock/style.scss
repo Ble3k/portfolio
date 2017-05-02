@@ -58,7 +58,7 @@ $heroBlockBorderRadius: 5px;
 }
 
 .hero__links {
-  @include flex();
+  @include flex(stretch);
   border-bottom-left-radius: $heroBlockBorderRadius;
   border-bottom-right-radius: $heroBlockBorderRadius;
   width: 100%;

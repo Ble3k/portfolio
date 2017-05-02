@@ -110,6 +110,7 @@
 .slider__main {
   @include flex(flex-start, center);
   width: 100%;
+  flex-shrink: 0;
 }
 
 .slider__main-image {
@@ -126,14 +127,14 @@
 
 .slider__sides-left {
   @extend .images-props;
-  flex: 1 1 50%;
+  flex: 1 0 50%;
   height: 100%;
   border-right: 1px solid rgba(182, 180, 174, 0.8);
 }
 
 .slider__sides-right {
   @extend .images-props;
-  flex: 1 1 50%;
+  flex: 1 0 50%;
   height: 100%;
 }
 
@@ -163,7 +164,7 @@
 
 .reviews {
   @include flex(center, center, column, nowrap);
-  background: url('/static/images/works-about.jpg') no-repeat center 0;
+  background: url('/static/images/works-about.jpg') no-repeat;
   background-size: cover;
   padding: 60px 20px;
   width: 100%;

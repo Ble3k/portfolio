@@ -111,8 +111,11 @@ function bindInfoWindow(marker, map, location) {
 }
 
 function init() {
+  var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+  var lat = viewportWidth <= 960 ? 55.72757756539090 : 55.72107756539090
+  var lng = viewportWidth <= 960 ? 37.78519948260497 : 37.78119948260497
   var mapOptions = {
-    center: new google.maps.LatLng(55.72107756539090,37.78119948260497),
+    center: new google.maps.LatLng(lat,lng),
     zoom: 16,
     gestureHandling: 'auto',
     fullscreenControl: false,
