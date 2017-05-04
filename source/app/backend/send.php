@@ -16,13 +16,13 @@ $mail->isSMTP();
 $mail->Host = 'smtp.timeweb.ru';
 // //$mail->SMTPDebug  = 2;
 $mail->SMTPAuth = true;
-$mail->Username = 'request@mirrorcx.com';  // Свой логин для почты
-$mail->Password = 'gprVfgex'; // Пароль от почтового ящика
+$mail->Username = 'portfolio@rufateev.ru';  // Свой логин для почты
+$mail->Password = 'Q34dse22Xcdr'; // Пароль от почтового ящика
 $mail->SMTPSecure = 'ssl';
 $mail->Port = '465';
 
 $mail->CharSet = 'UTF-8';
-$mail->From = 'request@mirrorcx.com';
+$mail->From = 'portfolio@rufateev.ru';
 $mail->FromName = 'Protfolio web-site';
 $mail->addAddress('rufateev@gmail.com');
 $mail->isHTML(true);

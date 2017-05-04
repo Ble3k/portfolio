@@ -22,6 +22,7 @@ $(document).ready(() => {
   const description = $('.slider__title .bernier__title')
   const link = $('.slider__link')
   const activeImage = $('.slider__main-image')
+  const activeImageChanged = $('.slider__main-image_changed')
   const leftSlide = $('.slider__sides-left')
   const rightSlide = $('.slider__sides-right')
 
@@ -29,48 +30,94 @@ $(document).ready(() => {
   const lastStep = slides.length - 1
   let currStep = initialStep
 
-  const slideOnChange = (currStep, nextStep, prevStep) => {
+  const slideToLeft = () => {
+    bindAction('unbind')
+    goPrev()
+  }
+
+  const slideToRight = () => {
+    bindAction('unbind')
+    goNext()
+  }
+
+  const setBackground = (selector, step) => selector.css('background-image', `url(${slides[step].image})`)
+
+  const bindAction = action => {
+    if (action === 'unbind') {
+      leftSlide.unbind()
+      rightSlide.unbind()
+    } else {
+      leftSlide.bind('click', slideToLeft)
+      rightSlide.bind('click', slideToRight)
+    }
+  }
+
+  const clearPos = (slideToRight) => {
+    const clearObj = {
+      'left': 'auto',
+      'right': 'auto',
+    }
+
+    activeImage.css({
+      ...clearObj,
+    })
+    activeImageChanged.css({
+      ...clearObj,
+      'right': slideToRight ? '200%' : 'auto'
+    })
+  }
+
+  const slideOnChange = (currStep, nextStep, prevStep, side, cb, duration = 700) => {
     description.html(slides[currStep].desc)
     link.attr('href', slides[currStep].link)
-    activeImage.fadeIn(1000).css('background-image', `url(${slides[currStep].image})`)
-    rightSlide.css('background-image', `url(${slides[nextStep].image})`)
-    leftSlide.css('background-image', `url(${slides[prevStep].image})`)
+    if (side) {
+      const slideToRight = side === 'right'
+      const definePosition = () => {
+        const defered = $.Deferred()
+        clearPos(slideToRight)
+        defered.resolve()
+
+        return defered
+      }
+
+      definePosition().then(() => {
+        activeImage.animate({ [side]: '-100%' }, duration)
+        activeImageChanged
+          .animate({ [side]: slideToRight ? '100%' : '-100%' }, duration, () => {
+            setBackground(activeImage, currStep)
+            cb()
+          })
+        setBackground(activeImageChanged, currStep)
+      })
+    } else {
+      setBackground(activeImage, currStep)
+      setBackground(activeImageChanged, nextStep)
+    }
+    setBackground(rightSlide, nextStep)
+    setBackground(leftSlide, prevStep)
   }
 
   const goPrev = () => {
     if (currStep > initialStep) {
       currStep--
       const prevStep = currStep - 1 < initialStep ? lastStep : currStep - 1
-      slideOnChange(currStep, currStep + 1, prevStep)
+      slideOnChange(currStep, currStep + 1, prevStep, 'left', bindAction)
     } else {
       currStep = lastStep
-      slideOnChange(currStep, initialStep, currStep - 1)
+      slideOnChange(currStep, initialStep, currStep - 1, 'left', bindAction)
     }
-    leftSlide.bind('click', slideToLeft)
   }
 
   const goNext = () => {
     if (currStep < lastStep) {
       currStep++
       const nextStep = currStep + 1 > lastStep ? initialStep : currStep + 1
-      slideOnChange(currStep, nextStep, currStep - 1)
+      slideOnChange(currStep, nextStep, currStep - 1, 'right', bindAction)
     } else {
       currStep = initialStep
-      slideOnChange(currStep, currStep + 1, lastStep)
+      slideOnChange(currStep, currStep + 1, lastStep, 'right', bindAction)
     }
-    rightSlide.bind('click', slideToRight)
   }
-
-  const slideToLeft = () => {
-    leftSlide.unbind()
-    activeImage.fadeOut(500, goPrev)
-  }
-
-  const slideToRight = () => {
-    rightSlide.unbind()
-    activeImage.fadeOut(500, goNext)
-  }
-
 
   leftSlide.bind('click', slideToLeft)
 

@@ -54,7 +54,8 @@
 }
 
 .bernier > svg {
-  @include svg(rgba($bernier-dark-svg, 0.7), auto, auto);
+  fill: rgba($bernier-dark-svg, 0.7);
+  height: auto;
   position: absolute;
   z-index: 0;
   top: -40px;

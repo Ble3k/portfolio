@@ -13,10 +13,10 @@ $(document).ready(() => {
 
   const manageMenu = action => {
     if (action === MENU_ACTIONS.open) {
-      menu.fadeIn(500).css('display', 'flex')
+      menu.slideDown(500).css('display', 'flex')
       body.css('overflow', 'hidden')
     } else if (action === MENU_ACTIONS.close) {
-      menu.fadeOut(500).css('display', 'none')
+      menu.slideUp(500)
       body.css('overflow', 'visible')
     }
   }

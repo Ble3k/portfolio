@@ -1,3 +1,20 @@
+@media only screen and (min-width: 1920px) {
+  .parallax__layer {
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .parallax {
+    display: none;
+  }
+
+  .main {
+    background: url('/static/images/main-backGround.jpg') no-repeat center center;
+    background-size: cover;
+  }
+}
+
 @media only screen and (max-width: 1780px) {
   .about__left {
     @include flex(center, flex-start, column, nowrap);
@@ -131,6 +148,7 @@
     width: 300px;
     height: 160px;
     left: 5px;
+    top: -70px;
   }
 
   .works__title-container {
