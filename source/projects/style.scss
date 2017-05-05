@@ -173,9 +173,10 @@
 
 .reviews {
   @include flex(center, center, column, nowrap);
-  background: url('/static/images/works-about.jpg') no-repeat;
+  background: url('/static/images/lake_bg_large.png');
   background-size: cover;
-  padding: 60px 20px;
+  background-repeat: no-repeat;
+  padding: 60px 20px 200px;
   width: 100%;
 }
 

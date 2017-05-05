@@ -1,4 +1,5 @@
 import * as slider from './slider'
+import * as formBlur from './formBlur'
 import { clearValue, validate } from './form'
 import $ from 'jquery'
 
