@@ -29,6 +29,8 @@ html
     div.main-menu
       div.main-menu__svg-container
         +Svg(ICON_TYPES.close)
+      div.main-menu__left
+      div.main-menu__right
       div.main-menu__link-container
         each item in LinksArray
           a.main-menu__link(href= item.link)

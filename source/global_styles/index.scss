@@ -131,8 +131,23 @@ input:-webkit-autofill {
   width: 100%;
   height: 100%;
   z-index: 99999999999;
-  background-color: $light-green;
+  background-color: transparent;
   display: none;
+}
+
+.main-menu__left {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background-color: $light-green;
+  z-index: 1;
+}
+
+.main-menu__right {
+  @extend .main-menu__left;
+  left: 100%;
 }
 
 .main-menu__svg-container {
@@ -142,6 +157,7 @@ input:-webkit-autofill {
   right: 30px;
   opacity: 0.5;
   cursor: pointer;
+  z-index: 3;
 }
 
 .main-menu__svg-container:hover {
@@ -153,7 +169,15 @@ input:-webkit-autofill {
 }
 
 .main-menu__link-container {
-  @include flex(center, center, column, nowrap);
+  @include flex(center, flex-start, column, nowrap);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 380px;
+}
+
+.main-menu__link {
+  display: none;
 }
 
 .main-menu__link h2 {
