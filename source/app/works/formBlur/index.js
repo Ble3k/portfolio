@@ -13,6 +13,5 @@ $(document).ready(() => {
   }
 
   $(window).on('resize', positionateBg)
-  positionateBg()
-
+  $(window).on('load', positionateBg)
 })
