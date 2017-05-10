@@ -55,7 +55,7 @@ export const validate = (
 
   const inputError = input => input.addClass('errorBox')
 
-  sbmtBtn.bind('click', e => sendData(e))
+  sbmtBtn.on('click', e => sendData(e))
 
   const sendData = e => {
     e.preventDefault()

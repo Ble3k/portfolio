@@ -21,8 +21,8 @@ $(document).ready(() => {
       openBtn.unbind()
       closeBtn.unbind()
     } else {
-      openBtn.bind('click', () => manageMenu(MENU_ACTIONS.open))
-      closeBtn.bind('click', () => manageMenu(MENU_ACTIONS.close))
+      openBtn.on('click', () => manageMenu(MENU_ACTIONS.open))
+      closeBtn.on('click', () => manageMenu(MENU_ACTIONS.close))
     }
   }
 

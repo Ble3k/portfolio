@@ -55,7 +55,11 @@ $(document).ready(() => {
         setPercents(imgs.length, percents)
         percents++
       },
-      error: () => percents++
+      error: () => {
+        setPercents(imgs.length, percents)
+        percents++
+        console.warn(`${image.attr('src')} has not been loaded`)
+      }
     })
   }
 })

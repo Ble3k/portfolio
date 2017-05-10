@@ -47,8 +47,8 @@ $(document).ready(() => {
       leftSlide.unbind()
       rightSlide.unbind()
     } else {
-      leftSlide.bind('click', slideToLeft)
-      rightSlide.bind('click', slideToRight)
+      leftSlide.on('click', slideToLeft)
+      rightSlide.on('click', slideToRight)
     }
   }
 
@@ -119,9 +119,9 @@ $(document).ready(() => {
     }
   }
 
-  leftSlide.bind('click', slideToLeft)
+  leftSlide.on('click', slideToLeft)
 
-  rightSlide.bind('click', slideToRight)
+  rightSlide.on('click', slideToRight)
 
   slideOnChange(currStep, currStep + 1, lastStep)
 
