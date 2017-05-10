@@ -173,10 +173,11 @@
 
 .reviews {
   @include flex(center, center, column, nowrap);
-  background: url('/static/images/lake_bg_large.png');
-  background-size: cover;
+  background: url('/static/images/reviews.png');
   background-repeat: no-repeat;
-  padding: 60px 20px 200px;
+  background-position: 0 200px;
+  min-height: 1285px;
+  padding: 60px 20px;
   width: 100%;
 }
 

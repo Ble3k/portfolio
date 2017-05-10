@@ -42,12 +42,6 @@
     background: url('/static/images/main-backGround.jpg') no-repeat center center;
     background-size: cover;
   }
-
-  .reviews,
-  .form__blur-bg {
-    background: url('/static/images/lake_bg.png') no-repeat;
-  }
-
 }
 
 @media only screen and (max-width: 960px) {
@@ -217,7 +211,7 @@
   }
 
   .reviews__container {
-    margin-top: 30px;
+    margin-top: 70px;
     justify-content: center;
   }
 

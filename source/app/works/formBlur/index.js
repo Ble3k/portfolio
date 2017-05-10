@@ -5,20 +5,11 @@ $(document).ready(() => {
   const reviews = $('.reviews')
 
   const positionateBg = () => {
-    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+    const posLeft = -formBg.offset().left
+    const reviewsBgPosY = +reviews.css('backgroundPositionY').replace('px', '')
+    const posTop = -(formBg.offset().top-reviews.offset().top - reviewsBgPosY)
 
-    const imgWidth = reviews.width()
-    const posLeft = reviews.offset().left - formBg.offset().left
-    let posTop = reviews.offset().top - formBg.offset().top
-
-    if (viewportWidth >= 760) {
-      formBg.css({
-        'background-size': `${imgWidth}px auto`,
-        'background-position': `${posLeft}px ${posTop}px`
-      })
-    } else {
-      formBg.css('background-position', 'center 100%')
-    }
+    formBg.css({ 'background-position': `${posLeft}px ${posTop}px` })
   }
 
   $(window).on('resize', positionateBg)
