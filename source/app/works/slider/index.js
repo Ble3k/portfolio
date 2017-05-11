@@ -67,9 +67,7 @@ $(document).ready(() => {
     })
   }
 
-  const slideOnChange = (currStep, nextStep, prevStep, side, cb, duration = 700) => {
-    description.html(slides[currStep].desc)
-    link.attr('href', slides[currStep].link)
+  const setMainImage = (side, duration, cb, currStep, nextStep) => {
     if (side) {
       const slideToRight = side === 'right'
       const definePosition = () => {
@@ -92,7 +90,14 @@ $(document).ready(() => {
     } else {
       setBackground(activeImage, currStep)
       setBackground(activeImageChanged, nextStep)
+      bindAction()
     }
+  }
+
+  const slideOnChange = (currStep, nextStep, prevStep, side, cb, duration = 700) => {
+    description.html(slides[currStep].desc)
+    link.attr('href', slides[currStep].link)
+    setMainImage(side, duration, cb, currStep, nextStep)
     setBackground(rightSlide, nextStep)
     setBackground(leftSlide, prevStep)
   }
@@ -118,10 +123,6 @@ $(document).ready(() => {
       slideOnChange(currStep, currStep + 1, lastStep, 'right', bindAction)
     }
   }
-
-  leftSlide.on('click', slideToLeft)
-
-  rightSlide.on('click', slideToRight)
 
   slideOnChange(currStep, currStep + 1, lastStep)
 
