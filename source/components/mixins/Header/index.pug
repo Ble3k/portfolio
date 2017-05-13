@@ -1,10 +1,12 @@
 mixin Header(icon, blog, name, description)
   header(class='header ' + blog)
+    div.parallax__scroll.parallax__scroll_main
     div.header__shadow-container
       include ../../HeaderTop/index
       div(class='header__content ' + blog)
-        +Svg(icon)
-        div.header__hero
+        div.parallax__scroll.parallax__scroll_abs
+          +Svg(icon)
+        div.header__hero.parallax__scroll
           div.header__hero__avatar
           if blog
             +BernierTitle('big', name, 'hasPseudo', 'white')

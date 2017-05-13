@@ -13,14 +13,28 @@ $(document).ready(() => {
       const divider = (i + 1) / 100
       const posX = initX * divider
       const posY = initY * divider
-      const transformString = `translate3d(${posX}px, ${posY}px, 0)`
+      const transform = `translate3d(${posX}px, ${posY}px, 0)`
 
-      $(layer).css({
-        transform: transformString,
-      })
+      $(layer).css({ transform })
     })
   }
 
   viewportWidth >= 1200 && $(window).on('mousemove', e => moveLayers(e))
+
+
+  const parallaxScrollLayers = [...$('.parallax__scroll')]
+
+  const parallaxOnScroll = () => {
+    if (parallaxScrollLayers.length !== 0) {
+      parallaxScrollLayers.forEach((layer, i) =>{
+        const posY = window.pageYOffset / ((i + 1) * 2)
+        const transform = `translate3d(0, ${posY}px, 0)`
+
+        $(layer).css({ transform })
+      })
+    }
+  }
+
+  $(window).on('scroll', parallaxOnScroll)
 
 })
