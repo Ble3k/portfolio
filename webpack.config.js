@@ -8,8 +8,8 @@ module.exports =
 
   entry: {
     index: './source/app/index.js',
-    googleMap: './source/app/googleMap/index.js',
-    works: './source/app/works/index.js'
+    works: './source/app/works/index.js',
+    about: './source/app/about/index.js',
   },
 
   output: {

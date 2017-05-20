@@ -10,7 +10,7 @@ $(document).ready(() => {
     const initY = (window.innerHeight / 2) - e.pageY
 
     layers.forEach((layer, i) => {
-      const divider = (i + 1) / 100
+      const divider = i / 100
       const posX = initX * divider
       const posY = initY * divider
       const transform = `translate3d(${posX}px, ${posY}px, 0)`

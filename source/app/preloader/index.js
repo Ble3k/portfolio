@@ -7,7 +7,7 @@ $(document).ready(() => {
   const imgs = []
   let percents = 1
 
-  const setPercents = (total, current) => {
+  const setPercents = (total = 1, current = 1) => {
     const percent = Math.ceil(current / total * 100)
 
     if (percent >= 10) {
@@ -23,7 +23,7 @@ $(document).ready(() => {
 
     preloaderPercents.text(percent + '%');
   };
-  
+
   allElems.forEach(elem => {
     const background = $(elem).css('background-image')
     const img = $(elem).is('img')
@@ -46,20 +46,24 @@ $(document).ready(() => {
       }
     }
   })
-  
-  for (let i = 0; i < imgs.length; i++) {
-    const image = $('<img>', { attr: {src: imgs[i]} })
 
-    image.on({
-      load: () => {
-        setPercents(imgs.length, percents)
-        percents++
-      },
-      error: () => {
-        setPercents(imgs.length, percents)
-        percents++
-        console.warn(`${image.attr('src')} has not been loaded`)
-      }
-    })
+  if (imgs.length) {
+    for (let i = 0; i < imgs.length; i++) {
+      const image = $('<img>', { attr: {src: imgs[i]} })
+
+      image.on({
+        load: () => {
+          setPercents(imgs.length, percents)
+          percents++
+        },
+        error: () => {
+          setPercents(imgs.length, percents)
+          percents++
+          console.warn(`${image.attr('src')} has not been loaded`)
+        }
+      })
+    }
+  } else {
+    setPercents()
   }
 })
